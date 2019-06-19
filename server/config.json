@@ -3,11 +3,11 @@
   "routes": [
     {
       "route": "/room",
-      "address": "http://127.0.0.1:3333/room"
+      "address": "http://54.219.168.155:3333/room"
     },
     {
       "route": "/booking",
-      "address": "http://127.0.0.1:3333/booking"
+      "address": "http://54.219.168.155:3333/booking"
     }
   ]
 }

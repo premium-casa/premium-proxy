@@ -13,6 +13,10 @@ const checkin = () => {
 const checkout = () => {
   return moment().add(randomNum(13, 19), 'days').format('YYYY-MM-DD');
 };
+const randomPop = () => {
+  const arr = [randomNum(10, 20), randomNum(0, 10000000), randomNum(0, 10000000), randomNum(0, 10000000)];
+  return arr[randomNum(0, 3)];
+};
 
 function generateRandomData(userContext, events, done) {
   // generate data with Faker:
@@ -24,8 +28,10 @@ function generateRandomData(userContext, events, done) {
   const check_in = checkin();
   const check_out = checkout();
   const roomid = randomNum(1, 10000000);
+  const randomId = randomPop();
   // add variables to virtual user's context:
-
+  
+  userContext.vars.randomId = randomPop;
   userContext.vars.id = id;
   userContext.vars.email = email;
   userContext.vars.guest_adult = guest_adult;
